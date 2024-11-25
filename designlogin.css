@@ -1,0 +1,173 @@
+/*  basics of page  */
+* {
+    margin: 0;
+    padding: 0;
+    /*  box sizing used to remove extra width that adds due to padding,marign, border etc. */
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*   */
+body {
+    display: grid;
+    place-items: center;
+    /*   set the height of the body element (or any container element) to 100% of the viewport height.  */
+    height: 100vh;
+    /* make change color linearly as we go left to right */
+    background: linear-gradient(90deg, #ff6347 0%, #ffd700 50%, #32cd32 100%);
+
+}
+
+
+.content {
+    width: 400px;
+    padding: 40px;
+    /* Semi-transparent dark background */
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 12px;
+    /* Enhanced shadow for depth */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    /* Blur background behind content */
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transitions for hover effects */
+}
+
+/* box size increasing on hover */
+.content:hover {
+    /* Slight zoom-in effect on hover */
+    transform: scale(1.05);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.8);
+    /* Stronger shadow on hover */
+}
+
+.content h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* Space letters for a more elegant feel */
+}
+
+.content label {
+    font-size: 16px;
+    color: #f6b606;
+    margin-bottom: 8px;
+    /* take full width of parent */
+    display: block;
+}
+
+.content input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+/* focus :this is a pseudo-class that applies styles to the input element when it is focused */
+
+.content input:focus {
+    border-color: #5215d5;
+    transform: scale(1.02);
+    /* Slight scale effect on focus */
+}
+
+.content button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* On Hover: The button will have a slight zoom effect and change its background color to a medium orange. */
+/* On Click: The button will change to a darker orange, indicating the active state (when the user clicks on it). */
+
+.content button:hover {
+    background-color: #d35400;
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
+}
+
+.content button:active {
+    background-color: #e67e22;
+    /* Darker color when clicked */
+}
+
+select {
+   
+    width: 200px;
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    color: #333;
+    font-size: 16px;
+}
+
+.opt {
+    font-size: 30px;
+    color: white;
+    background-color: black;
+    padding: 5px;
+    border-radius: 5px
+}
+
+
+.switch-form {
+    margin-top: 15px;
+}
+
+
+.switch-form p a {
+    color: #f39c12;
+    text-decoration: none;
+}
+
+.switch-form p a:hover {
+    color: #e67e22;
+}
+
+h1 {
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-bottom: 0px;
+    /* Adds space below the title */
+    position: relative;
+    /* For text-shadow effect */
+    font-weight: 600;
+    /* Makes the font bolder */
+    background-image: linear-gradient(90deg, #ca1323, #111010, #db1010, #2ecc71);
+    /* Gradient from orange, white, purple, to green */
+    background-clip: text;
+    /* Makes the gradient apply to the text itself */
+    -webkit-background-clip: text;
+    /* Ensures gradient background works in WebKit-based browsers */
+    color: transparent;
+    /* Makes the text color transparent so that the gradient is visible */
+    animation: glow 1.5s ease-in-out infinite alternate;
+    /* Adds a glowing effect animation */
+}
+
+/* Glowing animation */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #f39c12, 0 0 20px #f39c12, 0 0 30px #f39c12;
+    }
+
+    100% {
+        text-shadow: 0 0 20px #9b59b6, 0 0 30px #9b59b6, 0 0 40px #2ecc71;
+    }
+}

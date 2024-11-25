@@ -1,0 +1,149 @@
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background: linear-gradient(90deg, #ff6347 0%, #ffd700 50%, #32cd32 100%);
+  transition: margin-left 0.3s ease;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.logout-btn {
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logout-btn:hover {
+  background-color: #d35400;
+  transform: scale(1.05);
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: linear-gradient(145deg, #1d1d1d, #4e4e4e);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  transition: left 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #ffd700;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #ffd700;
+  color: #333;
+}
+
+.sidebar .profile-history-dropdown {
+  font-size: 18px;
+  color: #ffd700;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar .profile-history-dropdown:hover {
+  background-color: #ffd700;
+  color: #333;
+}
+
+.profile-dropdown-content {
+  display: none;
+  margin-left: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar .profile-history-dropdown.active + .profile-dropdown-content {
+  display: block;
+  opacity: 1;
+}
+
+.sidebar-btn {
+  font-size: 24px;
+  cursor: pointer;
+  color: #ffd700;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2000; /* Ensures it stays above other content */
+  transition: transform 0.3s ease;
+}
+
+.sidebar-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* Hide the sidebar */
+.sidebar.closed {
+  left: -250px;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  margin-top: 60px; /* Offset the content due to the fixed topbar */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(90deg, #f39c12, #e74c3c, #9b59b6, #2ecc71);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
